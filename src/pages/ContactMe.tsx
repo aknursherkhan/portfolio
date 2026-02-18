@@ -1,60 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './ContactMe.css';
-import profilePic from '../images/sumanth.jpeg';
-import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
-import { ContactMe as IContactMe } from '../types';
-import { getContactMe } from '../queries/getContactMe';
+import { FaEnvelope, FaCoffee, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { siteContent } from '../data/content';
 
 const ContactMe: React.FC = () => {
-
-  const [userData, setUserData] = useState<IContactMe>()
-
-  useEffect(() => {
-    async function fetchUserData() {
-      const data = await getContactMe();
-      setUserData(data);
-    }
-
-    fetchUserData();
-  }, []);
-
-  if (!userData) return <div>Loading...</div>;
+  const { contact, landingName } = siteContent;
 
   return (
     <div className="contact-container">
       <div className="linkedin-badge-custom">
-        <img src={profilePic} alt="Sumanth Samala" className="badge-avatar" />
+        <img src={contact.profileImageUrl} alt={landingName} className="badge-avatar" />
         <div className="badge-content">
-          <h3 className="badge-name">{userData?.name}</h3>
-          <p className="badge-title">{userData.title}</p>
+          <h3 className="badge-name">{landingName}</h3>
+          <p className="badge-title">Designer · Developer · Storyteller</p>
           <p className="badge-description">
-            {userData.summary}
+            Open to collaborations, product design roles, and creative projects.
           </p>
-          <p className="badge-company">{userData.companyUniversity}</p>
+          <p className="badge-company">Based in Kazakhstan · Available globally</p>
           <a
-            href={userData.linkedinLink}
+            href={contact.linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="badge-link"
           >
-            <FaLinkedin className="linkedin-icon" /> View Profile
+            <FaLinkedin className="linkedin-icon" /> View LinkedIn
+          </a>
+          <a
+            href={contact.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="badge-link"
+          >
+            <FaGithub className="linkedin-icon" /> View GitHub
           </a>
         </div>
       </div>
       <div className="contact-header">
-        <p>I'm always up for a chat or a coffee! Feel free to reach out.</p>
+        <p>Always up for a chat or a coffee. Reach out anytime.</p>
       </div>
       <div className="contact-details">
         <div className="contact-item">
           <FaEnvelope className="contact-icon" />
-          <a href={`mailto:${userData.email}`} className="contact-link">
-            {userData.email}
-          </a>
-        </div>
-        <div className="contact-item">
-          <FaPhoneAlt className="contact-icon" />
-          <a href={`tel:${userData.phoneNumber}`} className="contact-link">
-            {userData.phoneNumber}
+          <a href={`mailto:${contact.email}`} className="contact-link">
+            {contact.email}
           </a>
         </div>
         <div className="contact-fun">

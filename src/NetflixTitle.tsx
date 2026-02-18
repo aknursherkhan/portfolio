@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './NetflixTitle.css';
 import netflixSound from './netflix-sound.mp3';
 import { useNavigate } from 'react-router-dom';
-import logoImage from '../src/images/logo-2.png'; // Update with the path to your logo
+import { siteContent } from './data/content';
 
 const NetflixTitle = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -10,8 +10,8 @@ const NetflixTitle = () => {
 
   const handlePlaySound = () => {
     const audio = new Audio(netflixSound);
-    audio.play().catch(error => console.error("Audio play error:", error));
-    setIsClicked(true); // Starts animation after clicking
+    audio.play().catch(error => console.error('Audio play error:', error));
+    setIsClicked(true);
   };
 
   useEffect(() => {
@@ -25,11 +25,13 @@ const NetflixTitle = () => {
 
   return (
     <div className="netflix-container" onClick={handlePlaySound}>
-      <img 
-        src={logoImage} 
-        alt="Custom Logo" 
-        className={`netflix-logo ${isClicked ? 'animate' : ''}`} 
-      />
+      <div
+        className={`netflix-title ${isClicked ? 'animate' : ''}`}
+        aria-label={`${siteContent.landingName} Netflix intro`}
+      >
+        {siteContent.landingName}
+      </div>
+      <div className="netflix-subtitle">Click to enter</div>
     </div>
   );
 };

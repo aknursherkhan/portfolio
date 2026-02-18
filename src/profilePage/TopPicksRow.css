@@ -1,6 +1,6 @@
 .top-picks-row {
   margin: 20px 0;
-  padding: 10px 20px
+  padding: 10px 20px;
 }
 
 .row-title {
@@ -13,6 +13,13 @@
 .card-row {
   display: flex;
   gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+}
+
+.card-row::-webkit-scrollbar {
+  display: none;
 }
 
 .pick-card {
@@ -25,12 +32,13 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: slideIn 0.5s ease forwards;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 0 0 auto;
 }
 
 .pick-card:hover {
   transform: scale(1.05);
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5); /* Netflix red glow on hover */
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
 }
 
 .pick-image {
@@ -73,7 +81,6 @@
  color: rgb(153, 80, 80);
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;

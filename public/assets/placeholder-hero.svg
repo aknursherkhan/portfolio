@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Hero Placeholder</title>
+  <desc id="desc">Replace with a hero poster image.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111" />
+      <stop offset="100%" stop-color="#2b0a0a" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <rect x="80" y="80" width="1040" height="515" rx="24" fill="none" stroke="#e50914" stroke-width="4" />
+  <text x="600" y="330" fill="#f5f5f1" font-size="48" font-family="Arial, sans-serif" text-anchor="middle">Hero Video Poster</text>
+  <text x="600" y="390" fill="#b3b3b3" font-size="24" font-family="Arial, sans-serif" text-anchor="middle">Replace with a still from the background video</text>
+</svg>
