@@ -1,6 +1,6 @@
 import React from 'react';
 import './ContactMe.css';
-import { FaEnvelope, FaCoffee, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { siteContent } from '../data/content';
 
 const ContactMe: React.FC = () => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa'; // Import icons
+import { FaHome, FaEnvelope } from 'react-icons/fa'; // Import icons
 import './Navbar.css';
 import { siteContent } from '../data/content';
 import blueImage from '../images/blue.png';
