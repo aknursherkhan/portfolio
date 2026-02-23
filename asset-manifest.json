@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.36e7e934.css",
-    "main.js": "/static/js/main.39cca922.js",
+    "main.js": "/static/js/main.f2d521ed.js",
     "static/js/453.b0cd7502.chunk.js": "/static/js/453.b0cd7502.chunk.js",
     "static/media/Hotelcalifornia.jpg": "/static/media/Hotelcalifornia.a1b2e230d97c00441c76.jpg",
     "static/media/eat_that_frog.jpg": "/static/media/eat_that_frog.813c8f47ac052b6d620c.jpg",
@@ -19,11 +19,11 @@
     "static/media/ac-dc.jpg": "/static/media/ac-dc.44867f491e8e97894eff.jpg",
     "index.html": "/index.html",
     "main.36e7e934.css.map": "/static/css/main.36e7e934.css.map",
-    "main.39cca922.js.map": "/static/js/main.39cca922.js.map",
+    "main.f2d521ed.js.map": "/static/js/main.f2d521ed.js.map",
     "453.b0cd7502.chunk.js.map": "/static/js/453.b0cd7502.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.36e7e934.css",
-    "static/js/main.39cca922.js"
+    "static/js/main.f2d521ed.js"
   ]
 }
