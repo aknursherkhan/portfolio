@@ -12,11 +12,11 @@ const ContactMe: React.FC = () => {
         <img src={contact.profileImageUrl} alt={landingName} className="badge-avatar" />
         <div className="badge-content">
           <h3 className="badge-name">{landingName}</h3>
-          <p className="badge-title">Designer · Developer · Storyteller</p>
+          <p className="badge-title">AI & Data Systems · Product Engineering</p>
           <p className="badge-description">
-            Open to collaborations, product design roles, and creative projects.
+            Open to product, data, and AI-focused roles.
           </p>
-          <p className="badge-company">Based in Kazakhstan · Available globally</p>
+          <p className="badge-company">Based in San Francisco, CA · Available globally</p>
           <a
             href={contact.linkedinUrl}
             target="_blank"
@@ -29,14 +29,14 @@ const ContactMe: React.FC = () => {
             href={contact.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="badge-link"
+            className="badge-link github"
           >
             <FaGithub className="linkedin-icon" /> View GitHub
           </a>
         </div>
       </div>
       <div className="contact-header">
-        <p>Always up for a chat or a coffee. Reach out anytime.</p>
+        <p>Happy to connect about building creative, data-driven products!</p>
       </div>
       <div className="contact-details">
         <div className="contact-item">
@@ -44,10 +44,6 @@ const ContactMe: React.FC = () => {
           <a href={`mailto:${contact.email}`} className="contact-link">
             {contact.email}
           </a>
-        </div>
-        <div className="contact-fun">
-          <p>Or catch up over a coffee ☕</p>
-          <FaCoffee className="coffee-icon" />
         </div>
       </div>
     </div>

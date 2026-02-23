@@ -17,6 +17,9 @@ export interface TitleItem {
   subtitle?: string;
   synopsis: string;
   image: string;
+  /** Optional array of images shown as a slideshow in the modal.
+   *  When present, takes priority over previewVideoUrl/embedUrl. */
+  images?: string[];
   previewVideoUrl?: string;
   embedUrl?: string;
   externalUrl?: string;
@@ -38,17 +41,17 @@ export const siteContent = {
   hero: {
     headline: 'Aknur Sherkhan',
     profileSummary:
-      'Product-minded designer and developer focused on crafting cinematic, human-centered digital experiences.',
+      'A girl who left home to chase dreams across seven countries discovers that resilience can take you further than a map ever could. With a foundation in data science and economics, she found her way into building products that just make sense.',
     resumeUrl: '/assets/Aknur_Sherkhan_Resume.pdf',
     linkedinUrl: 'https://www.linkedin.com/in/aknursherkhan',
-    heroVideoUrl: 'https://www.w3schools.com/howto/rain.mp4',
+    heroVideoUrl: '/assets/hero-background.MOV',
     heroPosterUrl: '/assets/placeholder-hero.svg',
   },
   contact: {
     linkedinUrl: 'https://www.linkedin.com/in/aknursherkhan',
     githubUrl: 'https://github.com/aknursherkhan',
-    email: 'hello@example.com',
-    profileImageUrl: '/assets/aknursherkhan-linkedin.jpg',
+    email: 'aknur@uni.minerva.edu',
+    profileImageUrl: '/assets/aknursherkhan-linkedin-pfp.jpeg',
   },
   profiles: [
     {
@@ -77,79 +80,107 @@ export const siteContent = {
     {
       id: 'ecommerce',
       title: 'E-commerce Project',
-      subtitle: 'Qazaq Republic',
+      subtitle: 'Basqa',
       synopsis:
-        'A fashion-forward commerce experience designed to highlight bold identity, immersive storytelling, and premium product presentation.',
-      image: '/assets/projects/placeholder-project.svg',
-      previewVideoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
-      externalUrl: 'https://qazaqrepublic.com/en',
+        'Taking orders over WhatsApp is a nightmare for growth. To help a local brand scale, I built a custom React-based e-commerce platform with a structured checkout and proper data tracking. Through iterative layout testing and conversion improvements, the brand saw a 70% increase in sales.',
+      image: '/assets/projects/basqa_web.png',
+      previewVideoUrl: '/assets/projects/basqa_video.mp4',
+      externalUrl: 'https://basqa.kz/',
       metadata: [
-        { label: 'Category', value: 'E-commerce' },
-        { label: 'Role', value: 'Product Design, UX, Visual Systems' },
-        { label: 'Experience', value: 'Immersive shopping, brand storytelling' },
+        { label: 'Starring', value: 'React, SQL, JavaScript, HTML/CSS' },
+        { label: 'Genre', value: 'Digital Transformation, Full-Stack Engineering' },
+        { label: 'This project is', value: 'High-impact, Data-driven, Scalable ' },
       ],
-      tags: ['E-commerce', 'Brand', 'UX/UI'],
+      tags: ['Full-Stack', 'A/B Tested', 'Data-Driven'],
     },
     {
       id: 'gsp-cloud',
       title: 'GSP Cloud Project',
       subtitle: 'RealQclass',
       synopsis:
-        'Cloud-based learning platform built to make enterprise training feel cinematic, structured, and instantly engaging.',
-      image: '/assets/projects/placeholder-project.svg',
-      previewVideoUrl: 'https://www.w3schools.com/html/movie.mp4',
+        'Built a GPT-powered learning platform to make enterprise training more interactive and adaptive. I focused on structuring intuitive user flows, designing conversational interfaces, and refining prompt logic to support meaningful engagement rather than passive content consumption.',
+      image: '/assets/projects/gsp_cloud_inside.png',
       externalUrl: 'https://realqclass.com/',
       metadata: [
-        { label: 'Category', value: 'Cloud Platform' },
-        { label: 'Role', value: 'Product Strategy, Interface Design' },
-        { label: 'Focus', value: 'Learning experience, usability' },
+        { label: 'Starring', value: 'React.js, Python, GPT-powered AI' },
+        { label: 'Genre', value: 'EdTech, SaaS, Artificial Intelligence' },
+        { label: 'This project is', value: 'High-Retention, User-Centric' },
       ],
-      tags: ['Cloud', 'SaaS', 'Product'],
+      tags: ['React/Python', 'GPT-Powered', '25% Retention Boost'],
     },
     {
+      // ─────────────────────────────────────────────────────────────
+      // DATA VISUALIZATIONS — slideshow entry
+      //
+      // Add your assignment images to the `images` array below.
+      // Paths are relative to /public — e.g. if the file is at
+      //   public/assets/projects/dataviz/chart1.png
+      // then the path is:
+      //   '/assets/projects/dataviz/chart1.png'
+      //
+      // You can also use imported images:
+      //   import chart1 from '../images/dataviz/chart1.png';
+      //   ...
+      //   images: [chart1, chart2, chart3],
+      // ─────────────────────────────────────────────────────────────
       id: 'data-visualizations',
       title: 'Data Visualizations',
-      subtitle: 'Assignment Series',
+      subtitle: 'Dataviz Series',
       synopsis:
-        'A curated gallery of analytical visuals, crafted to make complex insights feel intuitive and cinematic.',
-      image: '/assets/projects/placeholder-visuals.svg',
-      previewVideoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
-      metadata: [
-        { label: 'Category', value: 'Data Visualization' },
-        { label: 'Tools', value: 'Tableau, Illustrator, Figma' },
-        { label: 'Focus', value: 'Storytelling with data' },
+        'A selection of data visualizations created for academic and independent projects. These include regression analyses, exploratory data analysis, model outputs, etc. Built using Python and Tableau and designed to communicate results clearly and accurately.',
+      image: '/assets/projects/dataviz.png', // still used as card thumbnail
+      images: [
+        // 👇 Replace / add your actual image paths here
+        '/assets/projects/dataviz/viz1.png',
+        '/assets/projects/dataviz/viz2.png',
+        '/assets/projects/dataviz/viz3.png',
+        '/assets/projects/dataviz/viz4.png',
+        '/assets/projects/dataviz/viz5.png',
+        '/assets/projects/dataviz/viz6.png',
+        '/assets/projects/dataviz/viz7.png',
+        '/assets/projects/dataviz/viz8.png',
+        '/assets/projects/dataviz/viz9.png',
+        '/assets/projects/dataviz/viz10.png',
       ],
-      tags: ['Visualization', 'Storytelling', 'Research'],
+      // previewVideoUrl is intentionally omitted — images[] takes priority
+      metadata: [
+        { label: 'Starring', value: 'Python, Pandas, Matplotlib, Seaborn, Tableau' },
+        { label: 'Genre', value: 'Data Analytics, Visual Storytelling' },
+        { label: 'This project is', value: 'Analytical, Insightful, Actionable' },
+      ],
+      tags: ['Python & Tableau','Data Storytelling', 'Statistical Analysis'],
     },
     {
       id: 'zwift',
       title: 'Zwift',
-      subtitle: 'Card, Box, Instruction Design',
+      subtitle: 'Vamos Jogar',
       synopsis:
-        'A complete packaging and instruction system built for clarity, premium feel, and high-energy performance branding.',
-      image: '/assets/projects/placeholder-zwift.svg',
-      previewVideoUrl: 'https://www.w3schools.com/html/movie.mp4',
+        'Designed an AI-powered vocabulary card game that used GPT as a dynamic game master to generate prompts, assess responses, and adjust difficulty in real time. Through rapid prototyping and playtesting cycles, we refined rule clarity, feedback timing, and engagement mechanics to deliver a functional prototype grounded in both pedagogy and usability.',
+      image: '/assets/projects/zwift.png',
+      embedUrl:
+        'https://www.canva.com/design/DAHB_iNo0iY/k6LhCVZGiUAiZgcpN42KEQ/view?embed',
+      externalUrl: 'https://drive.google.com/drive/folders/1IFowId1GGhjHFGF1Uran_EfgudozGwwq?usp=sharing',
       metadata: [
-        { label: 'Category', value: 'Packaging & Print' },
-        { label: 'Deliverables', value: 'Card, Box, Instructional Design' },
-        { label: 'Focus', value: 'Physical experience' },
+        { label: 'Starring', value: 'GPT-4, Figma, Prompt Engineering, Physical UX' },
+        { label: 'Genre', value: 'Card game, AI Interaction' },
+        { label: 'This project is', value: 'Highly Collaborative, AI-Driven, Hybrid UX' },
       ],
-      tags: ['Packaging', 'Print', 'Brand'],
+      tags: ['GPT Game Master', 'Rapid Prototyping', 'Language Learning'],
     },
   ] as TitleItem[],
   continueWatching: [
     {
       id: 'short-film',
-      title: 'Short Film',
-      image: '/assets/projects/placeholder-film.svg',
+      title: '인연 (Short Film)',
+      image: '/assets/projects/short_film_poster.png',
       type: 'modal',
       modalData: {
         id: 'short-film',
         title: 'Short Film',
-        subtitle: 'Co-produced',
+        subtitle: '인연',
         synopsis:
-          'A cinematic short film co-produced to explore atmosphere, pacing, and emotional storytelling.',
-        image: '/assets/projects/placeholder-film.svg',
+          'Co-produced in Seoul as part of a three-person team for the Minervopolis Film Festival. Involved in every stage, from concept development and production planning to shooting and post-production. The project received the Golden Owl (Jury Selection) and the Audience Choice Award.',
+        image: '/assets/projects/short_film_poster.png',
         embedUrl:
           'https://www.youtube.com/embed/-sincJEyW_8?si=4WUF8qrU8ThrBV1n',
         metadata: [
@@ -157,32 +188,32 @@ export const siteContent = {
           { label: 'Format', value: 'Short Film' },
           { label: 'Platform', value: 'YouTube' },
         ],
-        tags: ['Film', 'Production', 'Storytelling'],
+        tags: ['Creative Direction', 'End-to-End Production', 'Double Award Winner'],
       },
     },
     {
       id: 'recommendations',
       title: 'Recommendations',
-      image: '/assets/projects/placeholder-recommendation.svg',
+      image: '/assets/projects/recommendation.png',
       type: 'modal',
       modalData: {
         id: 'recommendations',
         title: 'Recommendations',
-        subtitle: 'Professor Endorsement',
+        subtitle: 'Academic Recommendation',
         synopsis:
-          'A highlight reel of academic and professional recommendations spotlighting collaboration and craft.',
-        image: '/assets/projects/placeholder-recommendation.svg',
+          'A LinkedIn recommendation from a professor in Formal Analysis, reflecting academic rigor, analytical strength, and collaboration.',
+        image: '/assets/projects/prof_hadavand_recommendation.png',
         metadata: [
           { label: 'Source', value: 'LinkedIn' },
           { label: 'Type', value: 'Recommendation' },
         ],
-        tags: ['Testimonials', 'Leadership', 'Mentorship'],
+        tags: ['Analytical Skills', 'Attention to Detail', 'Effective Communicator'],
       },
     },
     {
       id: 'contact',
       title: 'Contact Me',
-      image: '/assets/projects/placeholder-contact.svg',
+      image: '/assets/projects/contact_me.png',
       type: 'link',
       link: '/contact-me',
     },

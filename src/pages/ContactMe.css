@@ -73,6 +73,15 @@
   background-color: #005983;
 }
 
+.badge-link.github {
+  background-color: #24292e; /* GitHub Black */
+  margin-left: 10px;        /* Adds space so they don't overlap */
+}
+
+.badge-link.github:hover {
+  background-color: #1b1f23; /* Slightly darker on hover */
+}
+
 .linkedin-icon {
   margin-right: 5px;
 }
