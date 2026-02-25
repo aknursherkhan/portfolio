@@ -44,8 +44,8 @@ export const siteContent = {
       'A girl who left home to chase dreams across seven countries discovers that resilience can take you further than a map ever could. With a foundation in data science and economics, she found her way into building products that just make sense.',
     resumeUrl: '/assets/Aknur_Sherkhan_Resume.pdf',
     linkedinUrl: 'https://www.linkedin.com/in/aknursherkhan',
-    heroVideoUrl: '/assets/hero-background.mp4',
-    heroPosterUrl: '/assets/placeholder-hero.svg',
+    heroVideoUrl: '/assets/hero-video.mp4',
+    heroPosterUrl: '/assets/hero-photo.png',
   },
   contact: {
     linkedinUrl: 'https://www.linkedin.com/in/aknursherkhan',
