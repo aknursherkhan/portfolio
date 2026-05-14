@@ -69,13 +69,25 @@ const TitleModal: React.FC<TitleModalProps> = ({ isOpen, onClose, item }) => {
             </button>
           )}
 
-          {/* Image */}
-          <img
-            key={images[slideIndex]}
-            src={images[slideIndex]}
-            alt={`${item.title} – slide ${slideIndex + 1}`}
-            className="title-modal__slide-img"
-          />
+          {/* Image or Video */}
+          {images[slideIndex].endsWith('.mp4') ? (
+            <video
+              key={images[slideIndex]}
+              autoPlay
+              muted
+              controls
+              className="title-modal__slide-img"
+            >
+              <source src={images[slideIndex]} type="video/mp4" />
+            </video>
+          ) : (
+            <img
+              key={images[slideIndex]}
+              src={images[slideIndex]}
+              alt={`${item.title} – slide ${slideIndex + 1}`}
+              className="title-modal__slide-img"
+            />
+          )}
 
           {/* Next arrow */}
           {total > 1 && (
@@ -159,7 +171,7 @@ const TitleModal: React.FC<TitleModalProps> = ({ isOpen, onClose, item }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Visit Project
+                {item.externalLinkLabel || 'Visit Project'}
               </a>
             )}
           </div>

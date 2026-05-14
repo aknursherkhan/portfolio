@@ -3,9 +3,14 @@ import './ProfileBanner.css';
 import PlayButton from '../components/PlayButton';
 import MoreInfoButton from '../components/MoreInfoButton';
 import { siteContent } from '../data/content';
+import { FaGithub, FaEnvelope } from 'react-icons/fa';
 
-const ProfileBanner: React.FC<{ onVideoReady?: () => void }> = ({ onVideoReady }) => {
-  const { hero } = siteContent;
+interface ProfileBannerProps {
+  hero: typeof siteContent.heroes.ds_recruiter;
+  onVideoReady?: () => void;
+}
+
+const ProfileBanner: React.FC<ProfileBannerProps> = ({ hero, onVideoReady }) => {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const [renderKey, setRenderKey] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -22,6 +27,14 @@ const ProfileBanner: React.FC<{ onVideoReady?: () => void }> = ({ onVideoReady }
 
   const handleLinkedinClick = () => {
     window.open(hero.linkedinUrl, '_blank');
+  };
+
+  const handleGithubClick = () => {
+    window.open(siteContent.contact.githubUrl, '_blank');
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = `mailto:${siteContent.contact.email}`;
   };
 
   const handleVideoCanPlay = () => {
@@ -74,6 +87,20 @@ const ProfileBanner: React.FC<{ onVideoReady?: () => void }> = ({ onVideoReady }
         <div className="banner-buttons">
           <PlayButton onClick={handlePlayClick} label="Resume" />
           <MoreInfoButton onClick={handleLinkedinClick} label="LinkedIn" />
+          <button className="more-info-button" onClick={handleGithubClick} type="button">
+            <div className="icon-container">
+              <FaGithub size={24} style={{ fill: 'white' }} />
+            </div>
+            <div className="spacer"></div>
+            <span className="label">GitHub</span>
+          </button>
+          <button className="more-info-button" onClick={handleEmailClick} type="button">
+            <div className="icon-container">
+              <FaEnvelope size={24} style={{ fill: 'white' }} />
+            </div>
+            <div className="spacer"></div>
+            <span className="label">Email</span>
+          </button>
         </div>
       </div>
     </div>

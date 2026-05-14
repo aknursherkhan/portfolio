@@ -11,7 +11,14 @@ interface TopPicksRowProps {
 
 const TopPicksRow: React.FC<TopPicksRowProps> = ({ profile }) => {
   const [selected, setSelected] = useState<TitleItem | null>(null);
-  const topPicks = siteContent.topPicks;
+  const personaTopPickIds = siteContent.personaContent[profile]?.topPicks.map(p => p.id) || [];
+  const allProjects: { [key: string]: TitleItem } = {};
+  siteContent.topPicks.forEach(project => {
+    allProjects[project.id] = project;
+  });
+  const topPicks = personaTopPickIds
+    .map(id => allProjects[id])
+    .filter((project): project is TitleItem => !!project);
 
   return (
     <div className="top-picks-row">

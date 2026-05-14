@@ -12,7 +12,58 @@ interface ContinueWatchingProps {
 
 const ContinueWatching: React.FC<ContinueWatchingProps> = ({ profile }) => {
   const [selected, setSelected] = useState<TitleItem | null>(null);
-  const continueWatching = siteContent.continueWatching;
+  
+  // Get persona-specific continue watching items
+  const personaContinueWatchingItems = siteContent.personaContent[profile]?.continueWatching || [];
+  
+  // Create lookup maps
+  const allProjects: { [key: string]: TitleItem } = {};
+  siteContent.topPicks.forEach(project => {
+    allProjects[project.id] = project;
+  });
+  
+  // Map short-film and contact separately
+  const continueWatchingLookup: { [key: string]: any } = {
+    'short-film': {
+      id: 'short-film',
+      type: 'modal',
+      image: '/assets/projects/short_film_poster.png',
+      title: '인연 (Short Film)',
+      modalData: siteContent.continueWatchingItems['short-film'],
+    },
+    'contact': {
+      id: 'contact',
+      type: 'link',
+      image: '/assets/projects/contact_me.png',
+      title: 'Contact Me',
+      link: '/contact-me',
+    },
+  };
+  
+  // Combine all lookups
+  const allLookups = { ...allProjects, ...continueWatchingLookup };
+  
+  // Get the actual items for this persona
+  const continueWatching = personaContinueWatchingItems
+    .map(item => {
+      const project = allLookups[item.id];
+      if (!project) return null;
+      if (item.type === 'modal') {
+        return {
+          ...project,
+          type: 'modal',
+          modalData: project.modalData || project,
+        };
+      } else if (item.type === 'link') {
+        return {
+          ...project,
+          type: 'link',
+          link: project.link || '/contact-me',
+        };
+      }
+      return project;
+    })
+    .filter(Boolean);
 
   return (
     <div className="continue-watching-row">

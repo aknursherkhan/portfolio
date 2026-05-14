@@ -18,7 +18,7 @@ const ProfilePage: React.FC = () => {
   const allowedProfiles = siteContent.profiles.map(profile => profile.key);
   const profile = (allowedProfiles.includes(profileName as ProfileKey)
     ? profileName
-    : 'recruiter') as ProfileKey;
+    : 'ds_recruiter') as ProfileKey;
 
   useEffect(() => {
     // Hide background GIF until the hero video for this profile is ready
@@ -34,7 +34,7 @@ const ProfilePage: React.FC = () => {
           backgroundColor: showBackground ? undefined : '#000',
         }}
       >
-        <ProfileBanner onVideoReady={() => setShowBackground(true)} />
+        <ProfileBanner hero={siteContent.heroes[profile]} onVideoReady={() => setShowBackground(true)} />
       </div>
       <TopPicksRow profile={profile} />
       <ContinueWatching profile={profile} />
