@@ -46,7 +46,7 @@ export const siteContent = {
       headline: 'Aknur Sherkhan',
       profileSummary:
         'I work on problems where understanding the data matters as much as modeling it, and I care about clarity, rigor, and usefulness in everything I build. My background in Data Science and Economics, and the experience of living across different cultures, taught me to question assumptions and find meaning in complexity.',
-      resumeUrl: '/assets/Aknur_Sherkhan_Resume_DS.pdf',
+      resumeUrl: 'https://docs.google.com/document/d/1ylLEA9CN10Nxch3S-yQAdfNW0iUzpEmayc3i8IfWxEs/preview',
       linkedinUrl: 'https://www.linkedin.com/in/aknursherkhan',
       heroVideoUrl: '/assets/hero-background.mp4',
       heroPosterUrl: '/assets/hero-photo.png',
@@ -55,7 +55,7 @@ export const siteContent = {
       headline: 'Aknur Sherkhan',
       profileSummary:
         'I\'ve lived, studied, and worked across seven countries, and that experience shaped how I build products: stay curious, test assumptions, and design for people whose lives look nothing like your own. With a foundation in Data Science and Economics, I focus on creating products that solve real problems with clarity and intention.',
-      resumeUrl: '/assets/Aknur_Sherkhan_Resume_PM.pdf',
+      resumeUrl: 'https://docs.google.com/document/d/1flLHznvkOFU1rG_-1tLr1tcsLY5Uhr94CfWe9KJv8mQ/preview',
       linkedinUrl: 'https://www.linkedin.com/in/aknursherkhan',
       heroVideoUrl: '/assets/hero-background.mp4',
       heroPosterUrl: '/assets/hero-photo.png',
@@ -64,7 +64,7 @@ export const siteContent = {
       headline: 'Aknur Sherkhan',
       profileSummary:
         'I build ML systems that learn from real‑world data. From audio classification to recommendation models, I focus on turning ideas into models that hold up under real conditions. My approach combines rigor in modeling with pragmatism in deployment.',
-      resumeUrl: '/assets/Aknur_Sherkhan_Resume_ML.pdf',
+      resumeUrl: 'https://docs.google.com/document/d/1nhCeIum91BVYUEe-bR02SqIfVrR-rR89l81agqJSVys/preview',
       linkedinUrl: 'https://www.linkedin.com/in/aknursherkhan',
       heroVideoUrl: '/assets/hero-background.mp4',
       heroPosterUrl: '/assets/hero-photo.png',
@@ -216,7 +216,7 @@ export const siteContent = {
       title: 'Kazakh-Russian Speech Classifier',
       subtitle: 'Audio Classification',
       synopsis:
-        'Kazakh and Russian are spoken by overlapping populations in Kazakhstan and often mixed in the same conversation. Standard classifiers assume clean, single-language audio. I built a CNN and Attentional BiLSTM trained on MFCC features from the FLEURS dataset, using GroupShuffleSplit to prevent speaker leakage across train/test splits. The BiLSTM reached 89% validation accuracy, outperforming the CNN by ~17 points.',
+        'Kazakh and Russian are spoken by overlapping populations in Kazakhstan and often mixed in the same conversation. Standard classifiers assume clean, single-language audio. I built a CNN and Attentional BiLSTM trained on MFCC features from the FLEURS dataset, using GroupShuffleSplit to prevent speaker leakage across train/test splits. The BiLSTM reached 89% test accuracy, outperforming the CNN by ~9 percentage points.',
       image: '/assets/projects/mfcc_heatmaps.png',
       images: [
         '/assets/projects/mfcc_heatmaps.png',
@@ -227,7 +227,7 @@ export const siteContent = {
       metadata: [
         { label: 'Tech Stack', value: 'Python, PyTorch, LibROSA, FLEURS' },
         { label: 'Focus Areas', value: 'Audio Classification, Architecture Comparison, Data Leakage Prevention' },
-        { label: 'Impact', value: '89% Val Accuracy, CNN→BiLSTM +17pp Gain' },
+        { label: 'Impact', value: '89% Test Accuracy, CNN→BiLSTM +9pp Gain' },
       ],
       tags: ['Attentional BiLSTM', 'MFCC Features', 'Speaker-Aware Splits'],
       personas: ['ds_recruiter'],
